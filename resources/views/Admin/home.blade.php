@@ -1,15 +1,20 @@
-<x-app-layout>
-   
-</x-app-layout>
-
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title></title>
-    </head>
-
-    <body>
-        admin
-    </body>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    @include('admin.css')
+  </head>
+  <body>
+    <div class="container-scroller">
+      <!-- partial:partials/_sidebar.html -->
+      @include('admin.slidebar')
+      <!-- partial -->
+      @include('admin.header')
+        <!-- partial -->
+        @include('admin.body')
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    @include('admin.script')
+    <!-- End custom js for this page -->
+  </body>
 </html>
