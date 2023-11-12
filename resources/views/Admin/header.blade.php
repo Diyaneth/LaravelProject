@@ -154,4 +154,5 @@
                 <x-app-layout>
                 </x-app-layout>
               </li>
-          </div>
+            </div>
+        </nav>
