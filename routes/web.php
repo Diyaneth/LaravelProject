@@ -50,3 +50,9 @@ Route::post('/update_product_confirm/{id}',[AdminController::class,'update_produ
 Route::get('/product_details/{id}',[HomeController::class,'product_details']);
 
 Route::post('/add_cart/{id}',[HomeController::class,'add_cart']);
+
+Route::get('/show_cart',[HomeController::class,'show_cart']);
+
+Route::get('/remove_cart/{id}',[HomeController::class,'remove_cart']);
+
+Route::get('/cash_order',[HomeController::class,'cash_order']);
