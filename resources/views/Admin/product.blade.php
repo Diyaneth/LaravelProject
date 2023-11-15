@@ -47,7 +47,7 @@
         <div class="main-panel">
             <div class="content-wrapper">
 
-            @if(session()->has('message'))
+             @if(session()->has('message'))
               
               <div class="alert alert-success">
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">X</button>
@@ -108,7 +108,7 @@
                 </div>
             </div>
         </div>
-    </div>
+        
     <!-- container-scroller -->
     <!-- plugins:js -->
     @include('admin.script')

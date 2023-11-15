@@ -86,7 +86,7 @@
                 </table>
             </div>
     </div>
-    </div>       
+         
     <!-- container-scroller -->
     <!-- plugins:js -->
     @include('admin.script')
