@@ -352,4 +352,25 @@ class HomeController extends Controller
         return view('home.all_product',compact('product','comment','reply'));
 
     }
+
+    public function blog()
+    {
+        return view('home.blog');
+    }
+
+    public function contact()
+    {
+        return view('home.contact');
+    }
+
+    public function about()
+    {
+        return view('home.about');
+    }
+
+    public function testimonial()
+    {
+        return view('home.testimonial');
+    }
+
 }

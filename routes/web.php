@@ -89,3 +89,11 @@ Route::get('/product_search',[HomeController::class,'product_search']);
 Route::get('/products',[HomeController::class,'products']);
 
 Route::get('/search_product',[HomeController::class,'search_product']);
+
+Route::get('/blog',[HomeController::class,'blog']);
+
+Route::get('/contact',[HomeController::class,'contact']);
+
+Route::get('/about',[HomeController::class,'about']);
+
+Route::get('/testimonial',[HomeController::class,'testimonial']);
