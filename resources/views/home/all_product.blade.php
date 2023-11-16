@@ -26,20 +26,12 @@
          <!-- header section strats -->
          @include('home.header')
          <!-- end header section -->
-         <!-- slider section -->
-         @include('home.slider')
-         <!-- end slider section -->
-      </div>
-      <!-- why section -->
-      @include('home.why')
-      <!-- end why section -->
+        
+
       
-      <!-- arrival section -->
-      @include('home.arrival')
-      <!-- end arrival section -->
       
       <!-- product section -->
-      @include('home.product')
+      @include('home.product_view')
       <!-- end product section -->
 
       <!--comment and reply system start-->
@@ -103,15 +95,7 @@
 
       <!--comment and reply system end-->
 
-      <!-- subscribe section -->
-      @include('home.subscribe')
-      <!-- end subscribe section -->
-      <!-- client section -->
-      @include('home.client')
-      <!-- end client section -->
-      <!-- footer start -->
-      @include('home.footer')
-      <!-- footer end -->
+      
       <div class="cpy_">
          <p class="mx-auto">© 2021 All Rights Reserved By <a href="https://html.design/">Free Html Templates</a><br>
          
