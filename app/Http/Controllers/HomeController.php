@@ -360,7 +360,15 @@ class HomeController extends Controller
 
     public function contact()
     {
-        return view('home.contact');
+        if(Auth::id())
+        {
+            return view('home.contact');
+        }
+        else
+        {
+            return redirect('login');  
+        }
+        
     }
 
     public function about()
