@@ -22,6 +22,8 @@ use App\Models\Comment;
 
 use App\Models\Reply;
 
+use RealRashid\SweetAlert\Facades\Alert;
+
 class HomeController extends Controller
 {
     public function index()
@@ -99,7 +101,8 @@ class HomeController extends Controller
                 }
 
                 $cart->save();
-                return redirect()->back()->with('message','Product Added Successfully');
+                Alert::success('Product Added Successfully','We have Added product to the Cart');
+                return redirect()->back();
             }
             else
             {
@@ -126,8 +129,8 @@ class HomeController extends Controller
             $cart->Product_id=$product->id;
             $cart->quantity=$request->quantity;
             $cart->save();
-
-            return redirect()->back()->with('message','Product Added Successfully');
+            Alert::success('Product Added Successfully','We have Added product to the Cart');
+            return redirect()->back();
 
             }
 
@@ -213,7 +216,8 @@ class HomeController extends Controller
             $cart=cart::find($cart_id);
             $cart->delete();
         }
-        return redirect()->back()->with('message','We have Received your Order.We will connect with you soon.....');
+        Alert::success('We have Received your Order.','We will connect with you soon.....');
+        return redirect()->back();
     }
 
     public function stripe($totalprice)

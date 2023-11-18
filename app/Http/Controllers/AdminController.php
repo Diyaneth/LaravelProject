@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Auth;
 use PDF;
 use Notification;
 use App\Notifications\SendEmailNotification;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class AdminController extends Controller
 {
@@ -34,7 +35,8 @@ class AdminController extends Controller
         $data=new catagory;
         $data->catagory_name=$request->catagory;
         $data->save();
-        return redirect()->back()->with('message','Catagory Added Successfully');
+        Alert::success('Catagory Added Successfully','Catagory Added Successfully');
+        return redirect()->back();
         }
         else
         {
@@ -49,7 +51,8 @@ class AdminController extends Controller
         {
         $data=catagory::find($id);
         $data->delete();
-        return redirect()->back()->with('message','Catagory deleted successfully');
+        Alert::success('Catagory Deleted Successfully','Catagory Deleted Successfully');
+        return redirect()->back();
         }
         else
         {
@@ -92,8 +95,8 @@ class AdminController extends Controller
         $product->image=$imagename;
 
         $product->save();
-
-        return redirect()->back()->with('message','Product Added Successfully');
+        Alert::success('Product Added Successfully','Product Added Successfully');
+        return redirect()->back();
         }
         else
         {
@@ -123,8 +126,8 @@ class AdminController extends Controller
         $product=product::find($id);
 
         $product->delete();
-
-        return redirect()->back()->with('message','Product Deleted Successfully');
+        Alert::success('Product Deleted Successfully','Product Deleted Successfully');
+        return redirect()->back();
         }
         else
         {
@@ -174,8 +177,8 @@ class AdminController extends Controller
         
 
         $product->save();
-
-        return redirect()->back()->with('message','Product Updated Successfully');
+        Alert::success('Product Updated Successfully','Product Updated Successfully');
+        return redirect('show_product');
         }
         else
         {
@@ -206,6 +209,7 @@ class AdminController extends Controller
         $order->delivery_status="delivered";
         $order->payment_status='Paid';
         $order->save();
+        Alert::success('Order Delivered Successfully','Order Delivered Successfully');
         return redirect()->back();
         }
         else

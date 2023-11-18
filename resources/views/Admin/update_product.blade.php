@@ -38,6 +38,7 @@
     </style>
   </head>
   <body>
+  @include('sweetalert::alert')
     <div class="container-scroller">
       <!-- partial:partials/_sidebar.html -->
       @include('admin.slidebar')

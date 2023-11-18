@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" 
+   integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" 
+   crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- Required meta tags -->
     @include('admin.css')
 
@@ -36,7 +39,7 @@
     </style>
   </head>
   <body>
-  
+  @include('sweetalert::alert')
   <div class="container-scroller">
       <!-- partial:partials/_sidebar.html -->
       @include('admin.slidebar')
@@ -79,7 +82,7 @@
                         <td>{{$product->price}}</td>
                         <td>{{$product->discount_price}}</td>
                         <td><img class="img_size" src="/product/{{$product->image}}"></td>
-                        <td><a class="btn btn-danger" onclick="return confirm('Are you Yure to Delete This?')" href="{{url('delete_product',$product->id)}}">Delete</a></td>
+                        <td><a class="btn btn-danger" onclick="confirmation(event)" href="{{url('delete_product',$product->id)}}">Delete</a></td>
                         <td><a class="btn btn-success" href="{{url('update_product',$product->id)}}">Edit</a></td>
                     </tr>
                     @endforeach
@@ -91,5 +94,26 @@
     <!-- plugins:js -->
     @include('admin.script')
     <!-- End custom js for this page -->
+
+    <script>
+      function confirmation(ev) {
+        ev.preventDefault();
+        var urlToRedirect = ev.currentTarget.getAttribute('href');  
+        console.log(urlToRedirect); 
+        swal({
+            title: "Are you sure to delete this Product",
+            text: "You will not be able to revert this!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+        .then((willCancel) => {
+            if (willCancel) {   
+                window.location.href = urlToRedirect; 
+            }  
+        }); 
+    }
+</script>
+
   </body>
 </html>

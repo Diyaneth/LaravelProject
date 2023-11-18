@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" 
+   integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" 
+   crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- Required meta tags -->
     @include('admin.css')
 
@@ -30,6 +33,7 @@
     </style>
   </head>
   <body>
+  @include('sweetalert::alert')
     <div class="container-scroller">
       <!-- partial:partials/_sidebar.html -->
       @include('admin.slidebar')
@@ -67,7 +71,7 @@
                 <tr>
                   <td>{{$data->catagory_name}}</td>
                   <td>
-                    <a onclick="return confirm('Are You Sure To Delete This?')" class="btn btn-danger" href="{{url('delete_catagory',$data->id)}}">Delete</a>
+                    <a onclick="confirmation(event)" class="btn btn-danger" href="{{url('delete_catagory',$data->id)}}">Delete</a>
                   </td>
                 </tr>
                 @endforeach
@@ -82,5 +86,26 @@
     <!-- plugins:js -->
     @include('admin.script')
     <!-- End custom js for this page -->
+
+    <script>
+      function confirmation(ev) {
+        ev.preventDefault();
+        var urlToRedirect = ev.currentTarget.getAttribute('href');  
+        console.log(urlToRedirect); 
+        swal({
+            title: "Are you sure to delete this Catagory",
+            text: "You will not be able to revert this!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+        .then((willCancel) => {
+            if (willCancel) {   
+                window.location.href = urlToRedirect; 
+            }  
+        }); 
+    }
+</script>
+
   </body>
 </html>
