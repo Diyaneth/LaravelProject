@@ -22,6 +22,10 @@ use App\Models\Comment;
 
 use App\Models\Reply;
 
+use App\Models\subscribe;
+
+
+
 use RealRashid\SweetAlert\Facades\Alert;
 
 class HomeController extends Controller
@@ -357,11 +361,6 @@ class HomeController extends Controller
 
     }
 
-    public function blog()
-    {
-        return view('home.blog');
-    }
-
     public function contact()
     {
         if(Auth::id())
@@ -383,6 +382,23 @@ class HomeController extends Controller
     public function testimonial()
     {
         return view('home.testimonial');
+    }
+
+    public function subscribe(Request $request)
+    {
+        if(Auth::id())
+        {
+            $data=new subscribe;
+            
+            $data->email=$request->email;
+
+            $data->save();
+            return redirect()->back();
+        }
+    else
+    {
+        return redirect('login');
+    }
     }
 
 }
