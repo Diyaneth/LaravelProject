@@ -98,5 +98,11 @@ Route::get('/testimonial',[HomeController::class,'testimonial']);
 
 Route::post('/subscribe',[HomeController::class,'subscribe']);
 
+Route::get('/show_feedback',[HomeController::class,'show_feedback']);
+
+Route::post('/send_feedback',[HomeController::class,'send_feedback']);
+
+
+
 
 

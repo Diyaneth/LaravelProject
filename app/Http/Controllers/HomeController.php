@@ -24,7 +24,7 @@ use App\Models\Reply;
 
 use App\Models\subscribe;
 
-
+use App\Models\Feedback;
 
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -34,6 +34,7 @@ class HomeController extends Controller
     {
         $product=product::paginate(9);
         $comment=comment::orderby('id','desc')->get();
+        
         $reply=reply::all();
         return view('home.userpage',compact('product','comment','reply'));
     }
@@ -68,6 +69,7 @@ class HomeController extends Controller
     {
         $product=product::paginate(9);
         $comment=comment::orderby('id','desc')->get();
+        
         $reply=reply::all();
         return view('home.userpage',compact('product','comment','reply'));
     }
@@ -400,5 +402,22 @@ class HomeController extends Controller
         return redirect('login');
     }
     }
+
+    public function show_feedback()
+    {
+        $feedback=feedback::all();
+        return view('home.feedback',compact('feedback'));
+    }
+
+    public function send_feedback(Request $request)
+    {
+        $feedback=new feedback;
+        $feedback->F_name=$request->name;
+        $feedback->F_feedback=$request->feedback;
+        $feedback->save();
+        Alert::success('Thanks for your Feedback','Feedback Send Successfully');
+        return redirect()->back();
+    }
+
 
 }

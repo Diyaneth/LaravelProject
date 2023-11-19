@@ -28,17 +28,12 @@
          <!-- end header section -->
       </div>
       <!-- inner page section -->
-      <section class="inner_page_head">
-         <div class="container_fuild">
-            <div class="row">
-               <div class="col-md-12">
-                  <div class="full">
-                     <h3>About us</h3>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </section>
+      <div class="heading_container heading_center">
+               <h2 style="font-size:70px;"><br>
+                  About <span>US</span>
+               </h2>
+               <br><br>
+</div><br>
       <!-- end inner page section -->
       <!-- why section -->
       <section class="why_section layout_padding">

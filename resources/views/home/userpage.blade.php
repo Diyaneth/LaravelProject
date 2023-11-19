@@ -44,9 +44,14 @@
       <!-- end product section -->
 
       <!--comment and reply system start-->
-
+      <div class="heading_container heading_center">
+               <h2 style="font-size:40px;">
+                  Add <span>Comment</span>
+               </h2>
+               <br><br>
+</div><br>
       <div style="text-align:center; padding-bottom:30px;">
-         <h1 style="font-size=30px; text-align:center; padding-top:20px; padding-bottom:20px;">Comments</h1>
+         
 
          <form action="{{url('add_comment')}}" method="POST">
          @csrf
@@ -56,14 +61,19 @@
          </form>
       </div>
 
-
+      <div class="heading_container heading_center">
+               <h2 style="font-size:30px;">
+                  All <span>Comments</span>
+               </h2>
+               <br><br>
+</div><br>
       <div style="padding-left:20%;">
-         <h1 style="font-size:20px; padding-bottom:20px;">All Comments</h1>
+         
 
          @foreach($comment as $comment)
          <div>
-            <b>{{$comment->name}}</b>
-            <p>{{$comment->comment}}</p>
+            <b style="font-size:20px; color:teal;">{{$comment->name}}</b>
+            <p style="font-size:20px;">{{$comment->comment}}</p>
             <a style="color:blue;" href="javascript::void(0);" onclick="reply(this)" data-Commentid="{{$comment->id}}">Reply</a>
 
             @foreach($reply as $reply1)
@@ -71,8 +81,8 @@
             @if($reply1->comment_id==$comment->id)
 
          <div style="padding-left:3%; padding-bottom:10px;">
-            <b>{{$reply1->name}}</b>
-            <p>{{$reply1->reply}}</p>
+            <b style="font-size:20px; color:teal;">{{$reply1->name}}</b>
+            <p style="font-size:20px;">{{$reply1->reply}}</p>
             <a style="color:blue;" href="javascript::void(0);" onclick="reply(this)" data-Commentid="{{$comment->id}}">Reply</a>
 
          </div>

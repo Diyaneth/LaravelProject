@@ -76,6 +76,8 @@ h2 {
   color: #8C5AFE;
 }
 
+
+
 .heading_container p {
   margin-top: 10px;
   margin-bottom: 0;
@@ -974,6 +976,32 @@ li.nav-item ul li a:hover, li.nav-item ul li a:focus {
 .inner_page_head h3 {
     font-size: 42px;
     font-weight: 800;
+}
+
+.inner_page_down {
+  background: #8C5AFE;
+  text-align: center;
+  color: #fff;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.inner_page_down h3 {
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.inner_page_body {
+  background: #ddddff;
+  text-align: center;
+  color: #00003b;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.inner_page_body h3 {
+  font-size: 32px;
+  font-weight: 600;
 }
 
 /** footer **/

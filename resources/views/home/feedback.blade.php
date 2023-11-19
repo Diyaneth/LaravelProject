@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
    <head>
-      <!-- Basic -->
-      <meta charset="utf-8" />
+  <!-- Basic -->
+  <meta charset="utf-8" />
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
       <!-- Mobile Metas -->
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -22,6 +22,7 @@
       <link href="{{asset('home/css/responsive.css')}}" rel="stylesheet" />
    </head>
    <body class="sub_page">
+   @include('sweetalert::alert')
       <div class="hero_area">
          <!-- header section strats -->
          @include('home.header')
@@ -30,7 +31,7 @@
       <!-- inner page section -->
       <div class="heading_container heading_center">
                <h2 style="font-size:70px;"><br>
-                  Contact <span>US</span>
+                  Give <span>Feedback</span>
                </h2>
                <br><br>
 </div><br>
@@ -42,20 +43,41 @@
             <div class="row">
                <div class="col-lg-8 offset-lg-2">
                   <div class="full">
-                     <form action="index.html">
+                     <form action="{{url('send_feedback')}}" method="POST">
+                        @csrf
                         <fieldset>
                            <input type="text" placeholder="Enter your full name" name="name" required />
-                           <input type="email" placeholder="Enter your email address" name="email" required />
-                           <input type="text" placeholder="Enter subject" name="subject" required />
-                           <textarea placeholder="Enter your message" required></textarea>
-                           <input type="submit" value="Submit" />
+                           
+                           <textarea placeholder="Enter your feedback" name="feedback" required></textarea>
+                           <input type="submit" name="submit" value="Send feedback" />
+                           
                         </fieldset>
                      </form>
                   </div>
                </div>
             </div>
-         </div>
+        </div>
       </section>
+
+      <div>
+        
+      <div class="heading_container heading_center">
+               <h2 style="font-size:40px;">
+                  All <span>feedbacks</span>
+               </h2>
+               <br><br>
+</div><br>
+         @foreach($feedback as $feedback)
+         
+         <div style="padding-left:20%;">
+                  <b style="font-size:20px; color:teal;">{{$feedback->F_name}}</b>
+            <p style="font-size:20px;">{{$feedback->F_feedback}}</p><br>
+                  </div>
+           
+         
+        @endforeach
+        </div>
+        
       <!-- end why section -->
       <!-- arrival section -->
       
