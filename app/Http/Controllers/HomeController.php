@@ -26,6 +26,10 @@ use App\Models\subscribe;
 
 use App\Models\Feedback;
 
+use App\Models\Message;
+
+use App\Models\Mreply;
+
 use RealRashid\SweetAlert\Facades\Alert;
 
 class HomeController extends Controller
@@ -363,19 +367,6 @@ class HomeController extends Controller
 
     }
 
-    public function contact()
-    {
-        if(Auth::id())
-        {
-            return view('home.contact');
-        }
-        else
-        {
-            return redirect('login');  
-        }
-        
-    }
-
     public function about()
     {
         return view('home.about');
@@ -417,6 +408,39 @@ class HomeController extends Controller
         $feedback->save();
         Alert::success('Thanks for your Feedback','Feedback Send Successfully');
         return redirect()->back();
+    }
+
+    public function show_contact()
+    {
+        if(Auth::id())
+        {
+            return view('home.contact');
+        }
+        else
+        {
+            return redirect('login');  
+        }
+        
+    }
+
+    public function send_message(Request $request)
+    {
+        if(Auth::id())
+        {
+            $message=new message;
+            $message->name=Auth::user()->name;
+            $message->email=Auth::user()->email;
+            $message->user_id=Auth::user()->id;
+            $message->subject=$request->subject;
+            $message->message=$request->message;
+            $message->save();
+            Alert::success('Successfully Sent your Message','We will reply soon');
+            return redirect()->back();
+        }
+        else
+            {
+                return redirect('login');
+            }
     }
 
 

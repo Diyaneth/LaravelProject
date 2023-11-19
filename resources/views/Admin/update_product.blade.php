@@ -49,54 +49,72 @@
         <div class="main-panel">
             <div class="content-wrapper">
 
-            @if(session()->has('message'))
-              
-              <div class="alert alert-success">
-                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">X</button>
-                  {{session()->get('message')}}
-                </div>
-  
-              @endif
-
                 <div class="div_center">
 
                 <h1 class="font_size">Update Product</h1>
                 <form action="{{url('/update_product_confirm',$product->id)}}" method="POST" enctype="multipart/form-data">
                     @csrf
-                <div class="div_design">
-                    <label>Product Title</label>
-                    <input class="text_color" type="text" name="title" placeholder="Write a Title" required="" value="{{$product->title}}">
-                </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Product Title</label>
+                            <div class="col-sm-9">
+                              <input style="color:black;" type="text" name="title" placeholder="Write a Title" required="" value="{{$product->title}}" class="form-control" />
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Product Description</label>
+                            <div class="col-sm-9">
+                              <input style="color:black;" type="text" name="description" placeholder="Write a Description" required="" value="{{$product->description}}" class="form-control" />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
 
-                <div class="div_design">
-                    <label>Product Description</label>
-                    <input class="text_color" type="text" name="description" placeholder="Write a Description" required="" value="{{$product->description}}">
-                </div>
-
-                <div class="div_design">
-                    <label>Product Price</label>
-                    <input class="text_color" type="number" name="price" placeholder="Input Price" required="" value="{{$product->price}}">
-                </div>
-
-                <div class="div_design">
-                    <label>Discount Price</label>
-                    <input class="text_color" type="number" name="dis_price" placeholder="Input Discount Price" value="{{$product->discount_price}}">
-                </div>
-
-                <div class="div_design">
-                    <label>Product Quantity</label>
-                    <input class="text_color" type="number" name="quantity" min="0" placeholder="Input Quantity" required="" value="{{$product->quantity}}">
-                </div>
-
-                <div class="div_design">
-                    <label>Product Catagory</label>
-                    <select class="text_color" name="catagory">
-                        <option value="{{$product->catagory}}" selected="">{{$product->catagory}}</option>
-                        @foreach($catagory as $catagory)
-                        <option value="{{$catagory->catagory_name}}">{{$catagory->catagory_name}}</option>
-                        @endforeach
-                    </select>
-                </div>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Product Price</label>
+                            <div class="col-sm-9">
+                              <input style="color:black;" type="number" name="price" placeholder="Input Price" required="" value="{{$product->price}}" class="form-control" />
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Discount Price</label>
+                            <div class="col-sm-9">
+                              <input style="color:black;" type="number" name="dis_price" placeholder="Input Discount Price" value="{{$product->discount_price}}" class="form-control" />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Product Quantity</label>
+                            <div class="col-sm-9">
+                              <input style="color:black;" type="number" name="quantity" min="0" placeholder="Input Quantity" required="" value="{{$product->quantity}}" class="form-control" />
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Product Catagory</label>
+                            <div class="col-sm-9">
+                              <select class="form-control" name="catagory">
+                                <option value="{{$product->catagory}}" selected="">{{$product->catagory}}</option>
+                                @foreach($catagory as $catagory)
+                                <option value="{{$catagory->catagory_name}}">{{$catagory->catagory_name}}</option>
+                                @endforeach
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
 
                 <div class="div_design">
                     <label>Current Product Image</label>
@@ -105,7 +123,7 @@
 
                 <div class="div_design">
                     <label>Change Product Image</label>
-                    <input  type="file" name="image">
+                    <input type="file" name="image" required="" class="form-control" />
                 </div>
 
                 <div class="div_design">

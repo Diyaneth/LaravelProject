@@ -59,6 +59,10 @@ Route::post('/send_user_email/{id}',[AdminController::class,'send_user_email']);
 
 Route::get('/search',[AdminController::class,'searchdata']);
 
+Route::get('/show_message',[AdminController::class,'show_message']);
+
+Route::get('/view_feedback',[AdminController::class,'view_feedback']);
+
 
 
 
@@ -90,8 +94,6 @@ Route::get('/products',[HomeController::class,'products']);
 
 Route::get('/search_product',[HomeController::class,'search_product']);
 
-Route::get('/contact',[HomeController::class,'contact']);
-
 Route::get('/about',[HomeController::class,'about']);
 
 Route::get('/testimonial',[HomeController::class,'testimonial']);
@@ -101,6 +103,11 @@ Route::post('/subscribe',[HomeController::class,'subscribe']);
 Route::get('/show_feedback',[HomeController::class,'show_feedback']);
 
 Route::post('/send_feedback',[HomeController::class,'send_feedback']);
+
+Route::get('/show_contact',[HomeController::class,'show_contact']);
+
+Route::post('/send_message',[HomeController::class,'send_message']);
+
 
 
 

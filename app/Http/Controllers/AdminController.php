@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Catagory;
 use App\Models\Product;
 use App\Models\Order;
+use App\Models\Message;
+use App\Models\Feedback;
 use Illuminate\Support\Facades\Auth;
 
 use PDF;
@@ -286,5 +288,25 @@ class AdminController extends Controller
             return redirect('login'); 
         }
         
+    }
+
+    public function show_message()
+    {
+        if(Auth::id())
+        {
+        $message=message::all();
+        return view('admin.message',compact('message'));
+        }
+        else
+        {
+            return redirect('login');
+        }
+        
+    }
+
+    public function view_feedback()
+    {
+        $feedback=feedback::all();
+        return view('admin.feedback',compact('feedback'));
     }
 }

@@ -22,6 +22,7 @@
       <link href="{{asset('home/css/responsive.css')}}" rel="stylesheet" />
    </head>
    <body class="sub_page">
+   @include('sweetalert::alert')
       <div class="hero_area">
          <!-- header section strats -->
          @include('home.header')
@@ -42,13 +43,12 @@
             <div class="row">
                <div class="col-lg-8 offset-lg-2">
                   <div class="full">
-                     <form action="index.html">
+                     <form action="{{url('send_message')}}" method="POST">
+                        @csrf
                         <fieldset>
-                           <input type="text" placeholder="Enter your full name" name="name" required />
-                           <input type="email" placeholder="Enter your email address" name="email" required />
                            <input type="text" placeholder="Enter subject" name="subject" required />
-                           <textarea placeholder="Enter your message" required></textarea>
-                           <input type="submit" value="Submit" />
+                           <textarea placeholder="Enter your message" name="message" required></textarea>
+                           <input type="submit" name="submit" value="Send Message" />
                         </fieldset>
                      </form>
                   </div>
@@ -56,6 +56,8 @@
             </div>
          </div>
       </section>
+
+
       <!-- end why section -->
       <!-- arrival section -->
       
@@ -139,6 +141,7 @@
          </div>
       </footer>
       <!-- footer section -->
+      
       <!-- jQery -->
       <script src="js/jquery-3.4.1.min.js"></script>
       <!-- popper js -->

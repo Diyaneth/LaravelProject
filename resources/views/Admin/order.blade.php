@@ -8,26 +8,7 @@
     @include('admin.css')
 
     <style type="text/css">
-    .title_deg
-    {
-        text-align:center;
-        font-size:25px;
-        font-weight:bold;
-        padding-bottom:40px;
-    }
 
-    .table_deg
-    {
-        border:2px solid teal;
-        width:100%;
-        margin:auto;
-        text-align:center;
-    }
-
-    .th_deg
-    {
-        background-color:teal;
-    }
 
     .img_size
     {
@@ -38,43 +19,51 @@
     </style>
   </head>
   <body>
-  @include('sweetalert::alert')
+  
     <div class="container-scroller">
+    @include('sweetalert::alert')
         @include('admin.slidebar')
         @include('admin.header')
         
         <div class="main-panel">
             <div class="content-wrapper">
-                <h1 class="title_deg">All Orders</h1>
-
-                <div style="padding-left:400px; padding-bottom:30px;">
+            <div class="col-lg-12 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">All Orders</h4>
+                    <p class="card-description"> 
+                    </p>
+                    <div class="table-responsive">
+                    <div>
                     <form action="{{url('search')}}" method="get">
                         @csrf
                         <input type="text" style="color:black;" name="search" placeholder="Search for Something">
                         <input type="submit" value="search" class="btn btn-outline-primary">
                     </form>
                 </div>
-
-                <table class="table_deg">
-                    <tr class="th_deg">
-                        <th style="padding:10px;">Name</th>
-                        <th style="padding:10px;">Email</th>
-                        <th style="padding:10px;">Address</th>
-                        <th style="padding:10px;">Phone</th>
-                        <th style="padding:10px;">Product Title</th>
-                        <th style="padding:10px;">Quantity</th>
-                        <th style="padding:10px;">Price</th>
-                        <th style="padding:10px;">Payment Status</th>
-                        <th style="padding:10px;">Delivery Status</th>
-                        <th style="padding:10px;">Image</th>
-                        <th style="padding:10px;">Delivered</th>
-                        <th style="padding:10px;">Print pdf</th>
-                        <th style="padding:10px;">Send Email</th>
-                    
-                    </tr>
-                    @forelse($order as $order)
-                    <tr>
-                        <td>{{$order->name}}</td>
+                      <table class="table table-striped">
+                        <thead>
+                          <tr>
+                            
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Phone</th>
+                        <th>Product Title</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Payment Status</th>
+                        <th>Delivery Status</th>
+                        <th>Image</th>
+                        <th>Delivered</th>
+                        <th>Print pdf</th>
+                        <th>Send Email</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                        @forelse($order as $order)
+                          <tr>
+                          <td>{{$order->name}}</td>
                         <td>{{$order->email}}</td>
                         <td>{{$order->address}}</td>
                         <td>{{$order->phone}}</td>
@@ -99,15 +88,21 @@
                         <td>
                             <a href="{{url('send_email',$order->id)}}" class="btn btn-info">Send Email</a>
                         </td>
-                    </tr>
-                    @empty
+                          </tr>
+                          @empty
                     <tr>
                         <td colspan="16">
                             No Data Found
                         </td>
                     </tr>
                     @endforelse
-                </table>
+                          
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
             </div>
         </div>
