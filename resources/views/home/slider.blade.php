@@ -11,13 +11,13 @@
                               <div class="detail-box">
                                  <h1>
                                     <span>
-                                    Sale 20% Off
+                                    Cyber Store
                                     </span>
                                     <br>
-                                    On Everything
+                                    Online Shopping
                                  </h1>
                                  <p>
-                                    Explicabo esse amet tempora quibusdam laudantium, laborum eaque magnam fugiat hic? Esse dicta aliquid error repudiandae earum suscipit fugiat molestias, veniam, vel architecto veritatis delectus repellat modi impedit sequi.
+                                 Ladies, gents and kids clothing, bags, shoes and accessories, lifestyle, home appliances. Quality products, affordable prices, under one roof!
                                  </p>
                                  <div class="btn-box">
                                     <a href="{{url('products')}}" class="btn1">
@@ -37,14 +37,14 @@
                            <div class="col-md-7 col-lg-6 ">
                               <div class="detail-box">
                                  <h1>
-                                    <span>
+                                 <span>
                                     Sale 20% Off
                                     </span>
                                     <br>
                                     On Everything
                                  </h1>
                                  <p>
-                                    Explicabo esse amet tempora quibusdam laudantium, laborum eaque magnam fugiat hic? Esse dicta aliquid error repudiandae earum suscipit fugiat molestias, veniam, vel architecto veritatis delectus repellat modi impedit sequi.
+                                 World Wide Shipping - Largest collection of Sri Lankan merchandise online. ... Send gifts to many countries from Sri Lanka. Delivery is guaranteed.
                                  </p>
                                  <div class="btn-box">
                                     <a href="{{url('products')}}" class="btn1">
@@ -63,13 +63,13 @@
                               <div class="detail-box">
                                  <h1>
                                     <span>
-                                    Sale 20% Off
+                                    Order Now
                                     </span>
                                     <br>
                                     On Everything
                                  </h1>
                                  <p>
-                                    Explicabo esse amet tempora quibusdam laudantium, laborum eaque magnam fugiat hic? Esse dicta aliquid error repudiandae earum suscipit fugiat molestias, veniam, vel architecto veritatis delectus repellat modi impedit sequi.
+                                 The Best Online Shopping Experience in Sri Lanka with Islandwide Free/ Express/ Cash On Delivery
                                  </p>
                                  <div class="btn-box">
                                     <a href="{{url('products')}}" class="btn1">

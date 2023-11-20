@@ -7,9 +7,9 @@
                         <a href="#"><img width="210" src="home/images/logo.png" alt="#" /></a>
                       </div>
                       <div class="information_f">
-                        <p><strong>ADDRESS:</strong> 28 White tower, Street Name New York City, USA</p>
-                        <p><strong>TELEPHONE:</strong> +91 987 654 3210</p>
-                        <p><strong>EMAIL:</strong> yourmain@gmail.com</p>
+                        <p><strong>ADDRESS:</strong> Main Road, Bandarawela, Sri Lanka</p>
+                        <p><strong>TELEPHONE:</strong> +94 1234567890</p>
+                        <p><strong>EMAIL:</strong> cyberstore@gmail.com</p>
                       </div>
                    </div>
                </div>

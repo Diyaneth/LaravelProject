@@ -95,18 +95,20 @@
                         <a href="">
                         <i class="fa fa-map-marker" aria-hidden="true"></i>
                         <span>
-                        Location
+                        Bandarawela
                         </span>
                         </a>
                         <a href="">
                         <i class="fa fa-phone" aria-hidden="true"></i>
                         <span>
-                        Call +01 1234567890
+                        Call +94 1234567890
                         </span>
                         </a>
                         <a href="">
                         <i class="fa fa-envelope" aria-hidden="true"></i>
                         <span>
+                        cyberstore@gmail.com
+                        </span>
                         demo@gmail.com
                         </span>
                         </a>
@@ -119,7 +121,7 @@
                      Cyber Store
                      </a>
                      <p>
-                        Necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with
+                     The Best Online Shopping Experience in Sri Lanka with Islandwide Free/ Express/ Cash On Delivery.
                      </p>
                      <div class="footer_social">
                         <a href="">

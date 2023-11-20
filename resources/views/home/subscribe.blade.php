@@ -17,7 +17,7 @@
                   Subscribers - <span>{{$subs_count}}</span>
                </h2>
                <br><br>
-               </div>>                  
+               </div>                  
                         </form>
                      </div>
                   </div>

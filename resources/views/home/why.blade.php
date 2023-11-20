@@ -100,7 +100,7 @@
                            Fast Delivery
                         </h5>
                         <p>
-                           variations of passages of Lorem Ipsum available
+                        World Wide Shipping - Largest collection of Sri Lankan merchandise online. ... Send gifts to many countries from Sri Lanka. Delivery is guaranteed.
                         </p>
                      </div>
                   </div>
@@ -215,7 +215,7 @@
                            Free Shiping
                         </h5>
                         <p>
-                           variations of passages of Lorem Ipsum available
+                        World Wide Shipping - Largest collection of Sri Lankan merchandise online. ... Send gifts to many countries from Sri Lanka. Delivery is guaranteed.
                         </p>
                      </div>
                   </div>
@@ -236,7 +236,7 @@
                            Best Quality
                         </h5>
                         <p>
-                           variations of passages of Lorem Ipsum available
+                        World Wide Shipping - Largest collection of Sri Lankan merchandise online. ... Send gifts to many countries from Sri Lanka. Delivery is guaranteed.
                         </p>
                      </div>
                   </div>
