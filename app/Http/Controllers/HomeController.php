@@ -36,11 +36,14 @@ class HomeController extends Controller
 {
     public function index()
     {
+        
         $product=product::paginate(9);
         $comment=comment::orderby('id','desc')->get();
+        $feedback=feedback::all();
+        $subs_count=subscribe::all()->count();
         
         $reply=reply::all();
-        return view('home.userpage',compact('product','comment','reply'));
+        return view('home.userpage',compact('product','comment','reply','feedback','subs_count'));
     }
 
     public function redirect()
@@ -52,6 +55,8 @@ class HomeController extends Controller
         $total_product=product::all()->count();
         $total_order=order::all()->count();
         $total_user=user::all()->count();
+        $total_subs=subscribe::all()->count();
+        $total_feedbacks=feedback::all()->count();
         $order=order::all();
 
         $total_revenue=0;
@@ -67,15 +72,17 @@ class HomeController extends Controller
 
         $total_canceled=order::where('delivery_status','=','canceled')->get()->count();
 
-        return view('admin.home',compact('total_product','total_order','total_user','total_revenue','total_delivered','total_processing','total_canceled'));
+        return view('admin.home',compact('total_product','total_order','total_user',
+        'total_revenue','total_delivered','total_processing','total_canceled','total_subs','total_feedbacks'));
     }
     else
     {
         $product=product::paginate(9);
         $comment=comment::orderby('id','desc')->get();
-        
+        $feedback=feedback::all();
+        $subs_count=subscribe::all()->count();
         $reply=reply::all();
-        return view('home.userpage',compact('product','comment','reply'));
+        return view('home.userpage',compact('product','comment','reply','feedback','subs_count'));
     }
     }
 
@@ -181,6 +188,7 @@ class HomeController extends Controller
         {
             $id=Auth::user()->id;
             $cart=cart::where('user_id','=',$id)->get();
+            
             return view('home.showcart',compact('cart'));
         }
         else
@@ -381,16 +389,19 @@ class HomeController extends Controller
     {
         if(Auth::id())
         {
-            $data=new subscribe;
             
-            $data->email=$request->email;
+            $data=new subscribe;
+            $data->email=Auth::user()->email;
+            
+            
 
-            $data->save();
-            return redirect()->back();
+                $data->save();
+                return redirect()->back();
+            
         }
     else
     {
-        return redirect('login');
+        return redirect('login'); 
     }
     }
 
@@ -442,6 +453,8 @@ class HomeController extends Controller
                 return redirect('login');
             }
     }
+
+
 
 
 }

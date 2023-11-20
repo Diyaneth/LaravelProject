@@ -23,6 +23,8 @@
                                     <a href="{{url('products')}}" class="btn1">
                                     Shop Now
                                     </a>
+                                    
+                                    
                                  </div>
                               </div>
                            </div>

@@ -10,8 +10,9 @@
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
                         <form action="{{url('/subscribe')}}" method="POST">
                            @csrf
-                           <input type="email" name="email" placeholder="Enter your email">
-                           <button type="submit" name="submit">SUBSCRIBE</button>                   
+                           
+                           <button type="submit" name="submit">SUBSCRIBE</button> 
+                           <h2>{{$subs_count}}</h2>                  
                         </form>
                      </div>
                   </div>

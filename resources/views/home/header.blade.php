@@ -18,7 +18,7 @@
                            <a class="nav-link" href="{{url('show_contact')}}">Contact</a>
                         </li>
                         <li class="nav-item">
-                           <a class="nav-link" href="{{url('show_feedback')}}">Feedbacks</a>
+                           <a class="nav-link" href="{{url('show_feedback')}}">Feedback </a>
                         </li>
                         <li class="nav-item">
                            <a class="nav-link" href="{{url('products')}}">Products</a>
