@@ -11,7 +11,7 @@
       <meta name="description" content="" />
       <meta name="author" content="" />
       <link rel="shortcut icon" href="home/images/favicon.png" type="">
-      <title>Famms - Fashion HTML Template</title>
+      <title>Cyber Store</title>
       <!-- bootstrap core css -->
       <link rel="stylesheet" type="text/css" href="{{asset('/home/css/bootstrap.css')}}" />
       <!-- font awesome style -->
@@ -96,7 +96,7 @@
                <div class="col-md-4 footer-col">
                   <div class="footer_detail">
                      <a href="index.html" class="footer-logo">
-                     Famms
+                     Cyber Store
                      </a>
                      <p>
                         Necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with
@@ -131,10 +131,9 @@
             <div class="footer-info">
                <div class="col-lg-7 mx-auto px-0">
                   <p>
-                     &copy; <span id="displayYear"></span> All Rights Reserved By
-                     <a href="https://html.design/">Free Html Templates</a><br>
+                     &copy; <span id="displayYear"></span> All Rights Reserved
          
-                     Distributed By <a href="https://themewagon.com/" target="_blank">ThemeWagon</a>
+                     
                   </p>
                </div>
             </div>

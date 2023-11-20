@@ -387,22 +387,17 @@ class HomeController extends Controller
 
     public function subscribe(Request $request)
     {
-        if(Auth::id())
-        {
+ 
             
             $data=new subscribe;
-            $data->email=Auth::user()->email;
+            $data->email=$request->email;
             
             
 
                 $data->save();
                 return redirect()->back();
             
-        }
-    else
-    {
-        return redirect('login'); 
-    }
+
     }
 
     public function show_feedback()

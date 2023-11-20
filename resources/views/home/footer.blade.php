@@ -52,11 +52,11 @@
                           <p>Subscribe by our newsletter and get update protidin.</p>
                         </div>
                         <div class="form_sub">
-                           <form>
+                        <form action="{{url('/subscribe')}}" method="POST">
                               <fieldset>
                                  <div class="field">
-                                    <input type="email" placeholder="Enter Your Mail" name="email" />
-                                    <input type="submit" value="Subscribe" />
+                                    <input type="email" placeholder="Enter Your Mail" name="email" required />
+                                    <input type="submit" name="submit" value="Subscribe" />
                                  </div>
                               </fieldset>
                            </form>

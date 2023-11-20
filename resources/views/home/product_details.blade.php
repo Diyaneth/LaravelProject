@@ -12,7 +12,7 @@
       <meta name="description" content="" />
       <meta name="author" content="" />
       <link rel="shortcut icon" href="home/images/favicon.png" type="">
-      <title>Famms - Fashion HTML Template</title>
+      <title>Cyber Store</title>
       <!-- bootstrap core css -->
       <link rel="stylesheet" type="text/css" href="{{asset('/home/css/bootstrap.css')}}" />
       <!-- font awesome style -->
