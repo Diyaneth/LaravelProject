@@ -55,7 +55,7 @@
                     <div class="table-responsive">
                     <form action="{{url('add_catagory')}}" method="POST">
                 @csrf
-                <input class="input_color" type="text" name="catagory" placeholder="Input Catagory Name">
+                <input style="color:black;" type="text" name="catagory" placeholder="Input Catagory Name">
                 
                 <input type="submit" class="btn btn-primary" name="submit" value="Add Catagory">
               </form>

@@ -39,7 +39,7 @@ class HomeController extends Controller
         
         $product=product::paginate(9);
         $comment=comment::orderby('id','desc')->get();
-        $feedback=feedback::all();
+        $feedback=feedback::paginate(2);
         $subs_count=subscribe::all()->count();
         
         $reply=reply::all();
@@ -79,7 +79,7 @@ class HomeController extends Controller
     {
         $product=product::paginate(9);
         $comment=comment::orderby('id','desc')->get();
-        $feedback=feedback::all();
+        $feedback=feedback::paginate(2);
         $subs_count=subscribe::all()->count();
         $reply=reply::all();
         return view('home.userpage',compact('product','comment','reply','feedback','subs_count'));
@@ -402,7 +402,7 @@ class HomeController extends Controller
 
     public function show_feedback()
     {
-        $feedback=feedback::all();
+        $feedback=feedback::paginate(2);
         return view('home.feedback',compact('feedback'));
     }
 

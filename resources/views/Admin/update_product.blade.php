@@ -123,7 +123,7 @@
 
                 <div class="div_design">
                     <label>Change Product Image</label>
-                    <input type="file" name="image" required="" class="form-control" />
+                    <input type="file" name="image" class="form-control" />
                 </div>
 
                 <div class="div_design">

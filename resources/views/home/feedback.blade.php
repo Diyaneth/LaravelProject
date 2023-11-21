@@ -67,15 +67,20 @@
                </h2>
                <br><br>
 </div><br>
-         @foreach($feedback as $feedback)
+         @foreach($feedback as $feedbacks)
          
          <div style="padding-left:20%;">
-                  <b style="font-size:20px; color:teal;">{{$feedback->F_name}}</b>
-            <p style="font-size:20px;">{{$feedback->F_feedback}}</p><br>
+                  <b style="font-size:20px; color:teal;">{{$feedbacks->F_name}}</b>
+            <p style="font-size:20px;">{{$feedbacks->F_feedback}}</p><br>
                   </div>
            
          
         @endforeach
+        <span style="padding-top: 20px;">
+
+               {!!$feedback->withQueryString()->links('pagination::bootstrap-5')!!}
+
+               </span>
         </div>
         
       <!-- end why section -->
