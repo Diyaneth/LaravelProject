@@ -24,7 +24,69 @@
    <body class="sub_page">
       <div class="hero_area">
          <!-- header section strats -->
-         @include('home.header')
+         <header class="header_section">
+            <div class="container">
+               <nav class="navbar navbar-expand-lg custom_nav-container ">
+                  <a class="navbar-brand" href="{{url('/')}}"><img width="250" src="/home/images/logo.png" alt="#" /></a>
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class=""> </span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                     <ul class="navbar-nav">
+                        <li class="nav-item">
+                           <a class="nav-link" href="{{url('/')}}">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                       
+                        <li class="nav-item active">
+                           <a class="nav-link" href="{{url('about')}}">About</a>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link" href="{{url('show_contact')}}">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link" href="{{url('show_feedback')}}">Feedback </a>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link" href="{{url('products')}}">Products</a>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link" href="{{url('show_cart')}}">Cart</a>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link" href="{{url('show_order')}}">Orders</a>
+                        </li>
+                        <form action="{{url('search_product')}}" method="GET" class="form-inline">
+                           <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
+                           <i class="fa fa-search" aria-hidden="true"></i>
+                           </button>
+                        </form>
+
+                        @if (Route::has('login'))
+
+                        @auth
+                        <li class="nav-item">
+                        <x-app-layout>
+
+                        </x-app-layout>
+                        </li>
+                        @else
+
+                        <li class="nav-item">
+                           <a class="btn btn-primary" id="logincss" href="{{ route('login') }}">Login</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                           <a class="btn btn-success" href="{{ route('register') }}">Register</a>
+                        </li>
+                        @endauth
+                        
+                        @endif
+                        
+                     </ul>
+                  </div>
+               </nav>
+            </div>
+         </header>
          <!-- end header section -->
       </div>
       <!-- inner page section -->
@@ -284,30 +346,8 @@
       </section>
       <!-- end why section -->
       <!-- arrival section -->
-      <section class="arrival_section">
-         <div class="container">
-            <div class="box">
-               <div class="arrival_bg_box">
-                  <img src="images/arrival-bg.png" alt="">
-               </div>
-               <div class="row">
-                  <div class="col-md-6 ml-auto">
-                     <div class="heading_container remove_line_bt">
-                        <h2>
-                           #NewArrivals
-                        </h2>
-                     </div>
-                     <p style="margin-top: 20px;margin-bottom: 30px;">
-                        Vitae fugiat laboriosam officia perferendis provident aliquid voluptatibus dolorem, fugit ullam sit earum id eaque nisi hic? Tenetur commodi, nisi rem vel, ea eaque ab ipsa, autem similique ex unde!
-                     </p>
-                     <a href="">
-                     Shop Now
-                     </a>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </section>
+      @include('home.arrival')
+
       <!-- end arrival section -->
       <!-- footer section -->
       <footer class="footer_section">
@@ -385,12 +425,12 @@
       </footer>
       <!-- footer section -->
       <!-- jQery -->
-      <script src="js/jquery-3.4.1.min.js"></script>
+      <script src="home/js/jquery-3.4.1.min.js"></script>
       <!-- popper js -->
-      <script src="js/popper.min.js"></script>
+      <script src="home/js/popper.min.js"></script>
       <!-- bootstrap js -->
-      <script src="js/bootstrap.js"></script>
+      <script src="home/js/bootstrap.js"></script>
       <!-- custom js -->
-      <script src="js/custom.js"></script>
+      <script src="home/js/custom.js"></script>
    </body>
 </html>
