@@ -111,7 +111,7 @@
          @csrf
             <textarea style="height:150px; width:600px;" placeholder="Comment Something Here" name="comment"></textarea>
             <br>
-            <button><input type="submit" class="btn btn-primary" value="Comment"></button>
+            <input type="submit" class="btn btn-primary" value="Comment">
          </form>
       </div>
 

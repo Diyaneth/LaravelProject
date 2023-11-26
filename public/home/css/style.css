@@ -128,7 +128,9 @@ a:focus {
 }
 
 .header_section {
+  background-color: transparent;
     padding: 15px 0;
+    
 }
 
 .header_section .container-fluid {
@@ -430,7 +432,7 @@ a:focus {
           transform: translateY(0);
 }
 .arrival_section {
-    background-color: #d4ced0;
+    background-color: #ffffff;
 }
 .product_section .option_container {
   position: absolute;
